@@ -62,10 +62,13 @@
     }
 
     function extractData() {
-        console.log("captureResult",captureResult);
-        console.log("windowLocation", window.location.search.split("=")[1]);
-        //var url = 'http://www.mocky.io/v2/5dbee4b1330000b853a0e4a3';
-        var data = {name:captureResult.finalImage};
+        console.log("captureResult", captureResult);
+
+        const uuid = window.location.search.split("=")[1];
+        const data = {image:captureResult.finalImage, uuid:uuid};
+
+        console.log("payload", data);
+        
         if (captureResult == null) {
             alert('Please take a picture of the front of your passport.');
         } else {    
