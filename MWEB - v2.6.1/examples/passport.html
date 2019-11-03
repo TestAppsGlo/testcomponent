@@ -26,11 +26,12 @@
     var captureResult;
 
     function captureImage() {
+        console.log("entro");
         MitekMobileWeb.captureAndProcessImage(captureCallback, 'Passport');
     }
 
     function captureCallback(passportCaptureResult) {
-        console.log("entro exitoso");
+        console.log("entro2");
         if (passportCaptureResult.status == "success") {
             captureResult = passportCaptureResult;
             $('#captureFailure').hide();
@@ -89,10 +90,6 @@
         $('#captureButtons').hide();
         $('#loadingResultsPleaseWait').hide();
     }
-
-    $(window).load(function() {
-        setTimeout(captureImage, 5000); 
-    });
 
 </script>
 
