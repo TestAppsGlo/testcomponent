@@ -63,7 +63,6 @@
 
     function extractData() {
         console.log("captureResult", captureResult);
-
         const uuid = window.location.search.split("=")[1];
         const data = {image:captureResult.finalImage, uuid:uuid};
 
@@ -82,7 +81,7 @@
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));*/
             
-             //window.close();
+            window.close();
         }
 
     }
