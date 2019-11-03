@@ -91,9 +91,11 @@
         $('#loadingResultsPleaseWait').hide();
     }
 
-    window.onload = function() {
+    $(window).load(function() {
+        alert("window load occurred!");
         captureImage();
-  };
+    });
+
 </script>
 
 <div class="text-center">
