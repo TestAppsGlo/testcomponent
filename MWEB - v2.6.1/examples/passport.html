@@ -63,7 +63,7 @@
 
     function extractData() {
         console.log("captureResult",captureResult);
-        console.log("windowLocation", window.location);
+        console.log("windowLocation", window.location.search.split("=")[1]);
         //var url = 'http://www.mocky.io/v2/5dbee4b1330000b853a0e4a3';
         var data = {name:captureResult.finalImage};
         if (captureResult == null) {
