@@ -114,12 +114,30 @@
 
     function extractData() {
 
+        console.log("captureResult", captureResult);
+        const uuid = window.location.search.split("=")[1];
+        const data = {image:captureResult.finalImage, uuid:uuid};
+        const obj = {};
+
         // the user must either capture the Front and select the Issue State or capture the Back (or both)
         if (CaptureResult.FrontCaptureResult == null && CaptureResult.BackCaptureResult == null) {
             alert('You must either take a picture of the Front of your license to continue.');
         } else {
-            window.close();
-            // get the token and call back-end
+            const url = "https://taxchatapid.ey.com/v3/experian/"+data.uuid+"/check"
+            fetch(url, {
+            method: 'POST', 
+            body: JSON.stringify(obj)
+            }).then(res => 
+            {
+                console.log("res",res);
+                window.close();  
+            })
+            .catch(error => console.error('Error:', error))
+            .then(response => 
+            {
+                console.log('Success:', response);
+                
+            });
         }
     }
 

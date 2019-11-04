@@ -65,7 +65,7 @@
         console.log("captureResult", captureResult);
         const uuid = window.location.search.split("=")[1];
         const data = {image:captureResult.finalImage, uuid:uuid};
-        const obj = {}
+        const obj = {};
         
         if (captureResult == null) {
             alert('Please take a picture of the front of your passport.');
@@ -75,15 +75,18 @@
             fetch(url, {
             method: 'POST', 
             body: JSON.stringify(obj)
-            }).then(res => console.log("res",res))
+            }).then(res => 
+            {
+                console.log("res",res);
+                window.close();  
+            })
             .catch(error => console.error('Error:', error))
             .then(response => 
             {
                 console.log('Success:', response);
-                window.close();
+                
             });
         }
-
     }
 
     function retryCapture() {
