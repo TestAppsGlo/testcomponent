@@ -79,12 +79,10 @@
                 'Content-Type': 'application/json'
             }
             }).then(res => {
-                console.log(res)
-                window.close();   
+                res.status == 200 && window.close()
             })
-            .catch(error => console.error('Error:', error))
+            .catch(error => {alert("something was wrong please try again"); console.error('Error:', error)})
             .then(response => console.log('Success:', response));
-            
         }
 
     }
