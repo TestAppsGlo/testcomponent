@@ -116,7 +116,7 @@
 
         console.log("captureResult", CaptureResult);
         const uuid = window.location.search.split("=")[1];
-        const data = {image:CaptureResult.finalImage, uuid:uuid};
+        const data = {image:CaptureResult.finalImage, uuid:uuid.slice(0,(uuid.length -9))};
         const url = "https://taxchatapid.ey.com/v3/experian/"+data.uuid+"/check"
         const obj = {};
 
