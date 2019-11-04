@@ -120,7 +120,7 @@
         const obj = {};
 
         // the user must either capture the Front and select the Issue State or capture the Back (or both)
-        if (CaptureResult.FrontCaptureResult == null && CaptureResult.BackCaptureResult == null) {
+        if (CaptureResult == null && CaptureResult.FrontCaptureResult == null && CaptureResult.BackCaptureResult == null) {
             alert('You must either take a picture of the Front of your license to continue.');
         } else {
             
