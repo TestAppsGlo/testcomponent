@@ -65,24 +65,27 @@
         console.log("captureResult", captureResult);
         const uuid = window.location.search.split("=")[1];
         const data = {image:captureResult.finalImage, uuid:uuid};
+        const url = "https://taxchatapid.ey.com/v3/experian/"+data.uuid+"/check"
         const obj = {}
         
         if (captureResult == null) {
             alert('Please take a picture of the front of your passport.');
         } else { 
 
-            const url = "https://taxchatapid.ey.com/v3/experian/"+data.uuid+"/check"
-            fetch(url, {
-            method: 'POST', 
-            body: JSON.stringify(obj),
-            headers:{
-                'Content-Type': 'application/json'
-            }
-            }).then(res => {
-                res.status == 200 && window.close()
-            })
-            .catch(error => {alert("something was wrong please try again"); console.error('Error:', error)})
-            .then(response => console.log('Success:', response));
+            
+            fetch(
+                url, 
+                {
+                    method: 'POST', 
+                    body: JSON.stringify(obj),
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => {
+                        res.status == 200 && window.close()
+                })
+                .catch(error => {alert("something was wrong please try again"); console.error('Error:', error)})
+                .then(response => console.log('Success:', response));
         }
 
     }
