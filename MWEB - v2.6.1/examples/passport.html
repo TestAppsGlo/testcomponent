@@ -77,11 +77,13 @@
             headers:{
                 'Content-Type': 'application/json'
             }
-            }).then(res => res.json())
+            }).then(res => {
+                console.log(res)
+                window.close();   
+            })
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
             
-            window.close();
         }
 
     }
