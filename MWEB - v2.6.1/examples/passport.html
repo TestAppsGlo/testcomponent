@@ -74,7 +74,7 @@
             const url = "https://taxchatapid.ey.com/v3/experian/"+data.uuid+"/check"
             fetch(url, {
             method: 'POST', 
-            body: {}
+            body: JSON.stringify(obj)
             }).then(res => {
                 console.log(res)
                 window.close();   
