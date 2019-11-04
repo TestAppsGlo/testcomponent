@@ -65,21 +65,22 @@
         console.log("captureResult", captureResult);
         const uuid = window.location.search.split("=")[1];
         const data = {image:captureResult.finalImage, uuid:uuid};
-
-        console.log("payload", data);
+        const obj = {}
         
         if (captureResult == null) {
             alert('Please take a picture of the front of your passport.');
-        } else {    
-            /*fetch(url, {
+        } else { 
+            
+            const url = "https://taxchatapid.ey.com/v3/experian/"+data.uuid+"/check"
+            fetch(url, {
             method: 'POST', 
-            body: JSON.stringify(data),
+            body: JSON.stringify(obj),
             headers:{
                 'Content-Type': 'application/json'
             }
             }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));*/
+            .then(response => console.log('Success:', response));
             
             window.close();
         }

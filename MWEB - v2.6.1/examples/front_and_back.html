@@ -110,6 +110,7 @@
             alert('Unable to read the Back of your license.  Please try again.');
         }
     }
+    
 
     function extractData() {
 
@@ -117,7 +118,7 @@
         if (CaptureResult.FrontCaptureResult == null && CaptureResult.BackCaptureResult == null) {
             alert('You must either take a picture of the Front of your license to continue.');
         } else {
-
+            window.close();
             // get the token and call back-end
         }
     }
