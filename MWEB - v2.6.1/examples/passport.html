@@ -26,8 +26,8 @@
     var captureResult;
 
     function captureImage(e) {
-        e.target.blur();
         MitekMobileWeb.captureAndProcessImage(captureCallback, 'Passport');
+        e.target.blur();
     }
 
     function captureCallback(passportCaptureResult) {

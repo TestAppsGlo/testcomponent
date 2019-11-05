@@ -30,7 +30,6 @@
     };
 
     function captureFrontImage(e) {
-        e.target.blur();
         // use these params for the Front image capture to override the default settings
         var captureParams = {
             maxImageSize: 1600,
@@ -46,6 +45,7 @@
         };
 
         MitekMobileWeb.captureAndProcessImage(captureFrontCallback, 'DL_Front', captureParams);
+        e.target.blur();
     }
 
     function captureFrontCallback(frontCaptureResult) {
@@ -80,8 +80,8 @@
     }
 
     function captureBackImage(e) {
-        e.target.blur();
         MitekMobileWeb.captureAndProcessImage(captureBackCallback, 'DL_Back', backCaptureParams);
+        e.target.blur();
     }
 
     function captureBackCallback(backCaptureResult) {
