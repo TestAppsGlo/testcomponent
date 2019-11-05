@@ -25,8 +25,8 @@
 <script>
     var captureResult;
 
-    function captureImage() {
-        console.log("entro");
+    function captureImage(e) {
+        e.target.blur();
         MitekMobileWeb.captureAndProcessImage(captureCallback, 'Passport');
     }
 

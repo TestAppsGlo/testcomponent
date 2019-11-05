@@ -29,8 +29,8 @@
         "TransactionReference": null
     };
 
-    function captureFrontImage() {
-
+    function captureFrontImage(e) {
+        e.target.blur();
         // use these params for the Front image capture to override the default settings
         var captureParams = {
             maxImageSize: 1600,
@@ -49,6 +49,7 @@
     }
 
     function captureFrontCallback(frontCaptureResult) {
+
         if (frontCaptureResult.status == "success") {
             CaptureResult.FrontCaptureResult = frontCaptureResult;
             $('#frontFailure').hide();
@@ -78,7 +79,8 @@
         }
     }
 
-    function captureBackImage() {
+    function captureBackImage(e) {
+        e.target.blur();
         MitekMobileWeb.captureAndProcessImage(captureBackCallback, 'DL_Back', backCaptureParams);
     }
 
