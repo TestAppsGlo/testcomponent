@@ -170,7 +170,7 @@
     });
 
     $(window).blur(function(e) {
-        document.activeElement.tagName == "BODY" && window.close();
+        document.activeElement.tagName !== "BUTTON" && window.close();
     })
 
 </script>
