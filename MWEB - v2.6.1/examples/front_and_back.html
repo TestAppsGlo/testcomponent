@@ -171,15 +171,14 @@
 
     $(window).blur(function(e) {
         
-        document.activeElement.tagName !== "BUTTON" && window.close();
+       // document.activeElement.tagName !== "BUTTON" && window.close();
     })
 </script>
 
 <div class="text-center">
 
     <div class="helpText">
-        <h4>Take a picture of the Front and Back of your license.</h4>
-        Make sure to:
+        <h5><b>Take a picture of the Front and Back of your license. Make sure to:</b></h5>
         <ul>
             <li>Watch for glare</li>
             <li>Use a dark background</li>
@@ -189,29 +188,41 @@
 
     <div id="captureButtons" align="center">
 
-        <button id="frontCaptureButton" class="btn btn-default" onclick="captureFrontImage()">
-            <img id="frontSuccess" class="resultImage" style="display: none" src="../images/green_check.png"/>
-            <img id="frontFailure" class="resultImage" style="display: none" src="../images/red_x.png"/>
-            Capture DL Front</button>
+        <div class="column-1">
+            <div class="img-container">
+                <img src="../images/document.jpg" width="200px"/>
+            </div>
+            <button id="frontCaptureButton" class="btn btn-default" onclick="captureFrontImage()">
+                <img id="frontSuccess" class="resultImage" style="display: none" src="../images/green_check.png"/>
+                <img id="frontFailure" class="resultImage" style="display: none" src="../images/red_x.png"/>
+                Capture DL Front</button>
 
-        <br/>
+            <br/>
+            <div class="img-container">
+                <img id="licenseFrontPreview" class="capturedImagePreview"/>
+            </div>
+            <br/>
+        </div>
 
-        <img id="licenseFrontPreview" class="capturedImagePreview"/>
+        
+        <div class="column-2">
+            <div class="img-container">
+                <img src="../images/document.jpg" width="200px"/>  
+            </div>  
+            <button id="backCaptureButton" class="btn btn-default" onclick="captureBackImage()">
+                <img id="backSuccess" class="resultImage" style="display: none" src="../images/green_check.png"/>
+                <img id="backFailure" class="resultImage" style="display: none" src="../images/red_x.png"/>
+                Capture DL Back</button>
+            <br/>
+            <div class="img-container">
+                <img id="licenseBackPreview" class="capturedImagePreview"/>
+            </div>
+            <br/>
+        </div>
 
-        <br/>
+        
 
-        <button id="backCaptureButton" class="btn btn-default" onclick="captureBackImage()">
-            <img id="backSuccess" class="resultImage" style="display: none" src="../images/green_check.png"/>
-            <img id="backFailure" class="resultImage" style="display: none" src="../images/red_x.png"/>
-            Capture DL Back</button>
-
-        <br/>
-
-        <img id="licenseBackPreview" class="capturedImagePreview"/>
-
-        <br/>
-
-        <button id="extractDataButton" class="btn btn-primary" onclick="extractData()">Extract License Data</button>
+        <button id="extractDataButton" class="btn btn-primary" onclick="extractData()">Send</button>
 
     </div>
 
