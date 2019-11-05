@@ -168,7 +168,12 @@
     $(window).resize(function(){
         window.resizeTo(660,390);
     });
-    
+
+    $(window).blur(function(e) {
+        
+        document.activeElement.tagName !== "BUTTON" && window.close();
+    })
+
 </script>
 
 <div class="text-center">
