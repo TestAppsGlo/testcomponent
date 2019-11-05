@@ -17,6 +17,7 @@ ul li {
 }
 .capturedImagePreview {
     width: 60%;
+    margin-bottom: 40px;
 }
 #mitekLogo {
     margin-top: -6px;
