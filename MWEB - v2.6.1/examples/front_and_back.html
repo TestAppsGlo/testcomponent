@@ -45,7 +45,6 @@
         };
 
         MitekMobileWeb.captureAndProcessImage(captureFrontCallback, 'DL_Front', captureParams);
-        e.blur();
     }
 
     function captureFrontCallback(frontCaptureResult) {
@@ -172,7 +171,7 @@
 
     $(window).blur(function(e) {
         $("#frontCaptureButton").blur();
-        //document.activeElement.tagName !== "BUTTON" && window.close();
+        document.activeElement.tagName !== "BUTTON" && window.close();
     })
 
 </script>
