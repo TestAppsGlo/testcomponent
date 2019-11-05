@@ -117,8 +117,7 @@
 
     $(window).blur(function(e) {
         
-        console.log(document.activeElement.tagName);
-        //window.close();
+        document.activeElement.tagName !== "BUTTON" && window.close();
     })
 
 </script>
