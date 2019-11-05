@@ -191,7 +191,7 @@
 
     <div id="captureButtons" align="center">
 
-        <button id="frontCaptureButton" class="btn btn-default" onclick="captureFrontImage()">
+        <button id="frontCaptureButton" class="btn btn-default" onclick="captureFrontImage(e)">
             <img id="frontSuccess" class="resultImage" style="display: none" src="../images/green_check.png"/>
             <img id="frontFailure" class="resultImage" style="display: none" src="../images/red_x.png"/>
             Capture DL Front</button>
@@ -202,7 +202,7 @@
 
         <br/>
 
-        <button id="backCaptureButton" class="btn btn-default" onclick="captureBackImage()">
+        <button id="backCaptureButton" class="btn btn-default" onclick="captureBackImage(e)">
             <img id="backSuccess" class="resultImage" style="display: none" src="../images/green_check.png"/>
             <img id="backFailure" class="resultImage" style="display: none" src="../images/red_x.png"/>
             Capture DL Back</button>
