@@ -115,9 +115,9 @@
         window.resizeTo(660,390);
     });
 
-    $(window).blur(function() {
-        console.log("test");
-        window.close();
+    $(window).blur(function(e) {
+        console.log(e);
+        //window.close();
     })
 
 </script>
